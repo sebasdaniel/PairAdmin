@@ -1,0 +1,37 @@
+/* additional css after bootstrap */
+
+#content-img{
+	margin-top: 3em;
+}
+
+#pie{
+	background-color: #eee;
+	font-weight: bold;
+	padding-top: 1em;
+	text-align: center;
+}
+
+.auto-order-form{
+	display: inline-block;
+	padding: 8px 24px;
+}
+
+.list-pairs{
+	border-radius: 4px;
+	margin-bottom: 12px;
+	padding: 8px 12px;
+}
+
+.list-text-btn{
+	font-weight: bold;
+	margin: 7px 0;
+}
+
+.list-text-only{
+	font-weight: bold;
+	margin: 0;
+}
+
+.send-email{
+	max-width: 600px;
+}

@@ -284,4 +284,28 @@ class PairController extends BaseController{
 
 		return View::make('pair.home', array('pares' => $paresRevisados));
 	}
+
+	public function searchArticle($id){
+
+		$par = Pair::find($id);
+
+		if(count($par)){
+
+			$articulo = Input::get('articulo');
+
+			// Obtenemos los articulos cuyo titulo contengan el parametro de busqueda
+			$articulos = Article::where('titulo', 'LIKE', '%'.$articulo.'%')->get();
+
+			$data = array(
+				'idPar' => $par['id'], 
+				'nombrePar' => $par['nombres'].' '.$par['apellidos'], 
+				'articulos' => $articulos
+			);
+
+			return View::make('pair.add-article', $data);
+		}
+
+		// return View::make('pair.add-article');
+		return 'El par no se encontro';
+	}
 }

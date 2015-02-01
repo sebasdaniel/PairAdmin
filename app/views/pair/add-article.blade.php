@@ -6,7 +6,7 @@
 
 @section('maincontent')
   <!-- Formulario para buscar articulos por titulo -->
-  <form id="form1" class="form-inline" action="#" method="post">
+  <form id="form1" class="form-inline" action="{{ url('/pair/'.$idPar.'/article/search') }}" method="post">
     <div class="form-group">
       <label for="articulo" class="sr-only">Titulo del articulo</label>
       <input type="text" name="articulo" class="form-control" placeholder="Titulo del articulo" required>

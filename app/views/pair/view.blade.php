@@ -70,7 +70,7 @@
     <ul class="list-group">
       @foreach ($articulos as $articulo)
         <li class="list-group-item list-group-item-success">
-          <a href="{{ url('/pair/'.$par['id'].'/article/del/'.$articulo['id']) }}" class="close" aria-label="Delete"><span aria-hidden="true">&times;</span></a>
+          <a href="#" class="close" aria-label="Delete" onclick="eliminar('{{ url('/pair/'.$par['id'].'/article/del/'.$articulo['id']) }}')"><span aria-hidden="true">&times;</span></a>
           <p class="list-text-only"><em>{{ $articulo['pivot']['fecha_evaluacion'] }}</em> - {{ $articulo['titulo'] }}</p>
         </li>
       @endforeach
@@ -110,5 +110,14 @@
     });
     
     disableForm();
+
+    function eliminar(link){
+
+      var acepto = confirm('Esta seguro de quitar el articulo?');
+
+      if(acepto){
+        window.location = link;
+      }
+    }
   </script>
 @stop

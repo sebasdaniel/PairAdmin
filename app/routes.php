@@ -31,6 +31,8 @@ Route::get('/pair/{id}/article/add', 'PairController@formAddArticle'); // Formul
 
 Route::post('/pair/{id}/article/add', 'PairController@addArticle'); // Relaciona articulo con par
 
+Route::post('/pair/{id}/article/search', 'PairController@searchArticle');
+
 Route::get('/pair/{id}/article/del/{idArt}', 'PairController@delArticle'); // Elimina la relacion de una articulo con un par
 
 
@@ -46,7 +48,9 @@ Route::get('article/{id}/edit', 'ArticleController@formEditar'); // Formulario p
 
 Route::post('article/{id}/edit', 'ArticleController@editarArticulo'); // Guarda datos editados de un articulo
 
-Route::get('/contact', 'HomeController@showContact'); // Formulario para enviar correos
+Route::get('/contact', 'MailController@showForm'); // Formulario para enviar correos
+
+Route::post('/contact', 'MailController@sendMail'); // Envia correo
 
 
 

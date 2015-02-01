@@ -7,7 +7,7 @@
 @section('maincontent')
   <a href="{{ url('/article/add') }}" class="btn btn-success pull-right">Nuevo</a>
 
-  <form id="form1" class="form-inline" action="#" method="post">
+  <form id="form1" class="form-inline" action="{{ url('/article/search') }}" method="post">
     <div class="form-group">
       <label for="titulo">Buscar articulos</label>
       <input type="text" name="titulo" class="form-control" placeholder="Titulo del articulo" required>
